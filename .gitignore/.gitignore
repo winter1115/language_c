@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node {
+	int data;
+	struct node *link;
+}Node;
+
+
+Node* getNode() {
+	Node* newNode = (Node*)malloc(sizeof(Node));
+	newNode->link = NULL;
+	return newNode;
+}
+
+void push(Node** top, int data) {
+	Node* newNode = getNode();
+	newNode->data = data;
+	newNode->link = (*top);
+	(*top) = newNode;
+}
+int pop(Node** top)
+{
+	if ((top) == NULL) {
+		printf("Stak is Empty\n");
+		return -1;
+	}
+}
+void main()
+{
+	Node* top =(void*) NULL;
+	push(&top, 10);
+	push(&top, 20);
+	push(&top, 30);
+	pop(&top);
+}
